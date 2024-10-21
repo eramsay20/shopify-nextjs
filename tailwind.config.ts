@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -14,6 +15,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };
 export default config;
