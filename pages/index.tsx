@@ -19,6 +19,7 @@ import { extractDataFromEdges, storefront } from "@/utils/index";
 
 export interface IProduct {
   title: string,
+  description: string,
   handle: string,
   tags: [],
   priceRange: { 
@@ -35,7 +36,6 @@ interface IHome {
 
 // export const Portfolio = () => {
 export const Home: React.FC<IHome> = ({products}) => {
-  // console.log(products);
 
   return (
   <main>
@@ -130,7 +130,7 @@ const productQuery = `
               amount
             }
           }
-          images(first:1) {
+          images(first:3) {
             edges {
               node {
                 url

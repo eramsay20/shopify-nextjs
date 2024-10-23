@@ -1,3 +1,5 @@
+// https://admin.shopify.com/store/ramsay-test-development-store/apps/shopify-graphiql-app
+
 export const storefront = async(query, variables = {}) => {
   // TODO: Add error handling
   const response = await fetch(process.env.GRAPHQL_API_URL, {
@@ -18,33 +20,6 @@ export const extractDataFromEdges = ({edges}) => {
   return edges.map(edge => edge.node)
 }
 
-/*
-
-https://admin.shopify.com/store/ramsay-test-development-store/apps/shopify-graphiql-app
-
-query Products {
-  products(first:3) {
-    edges {
-      node {
-        title
-        handle
-        tags
-        priceRange {
-          minVariantPrice {
-            amount
-          }
-        }
-        images(first:1) {
-          edges {
-            node {
-              url
-              altText
-            }
-          }
-        }
-      }
-    }
-  }
+export const formatPrice = (number) => {
+  return Intl.NumberFormat("en-US", {style: "currency", currency: "USD", minimumFractionDigits: 2}).format(number)
 }
-
-*/
