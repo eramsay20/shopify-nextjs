@@ -24,4 +24,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* List styles */
+  ul {
+    @apply py-2;
+  }
+
+  li {
+    @apply list-disc ml-6;
+  }
+
+  /* Description link styles */
+  .product-description a {
+    @apply text-indigo-600 no-underline hover:underline ;
+  }
 }

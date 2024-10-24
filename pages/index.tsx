@@ -19,7 +19,7 @@ import { extractDataFromEdges, storefront } from "@/utils/index";
 
 export interface IProduct {
   title: string,
-  description: string,
+  descriptionHtml: HTMLElement,
   handle: string,
   tags: [],
   priceRange: { 
