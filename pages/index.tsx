@@ -6,6 +6,10 @@ import Navigation from "@/components/navigation";
 import ProductList from "@/components/product-list";
 import { extractDataFromEdges, storefront } from "@/utils/index";
 
+// Inspiration: 
+// https://wpstandard.com/ (CLEAN ECOMMERCE EXAMPLE)
+// https://www.oberlo.com/blog/shopify-stores (TOP SHOPIFY STORES)
+
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -40,7 +44,7 @@ export const Home: React.FC<IHome> = ({products}) => {
   return (
   <main>
       <Navigation />
-      <Hero />
+      <Hero featuredProduct={products[1]}/>
       <ProductList products={products} />
 
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
